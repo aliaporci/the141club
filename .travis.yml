@@ -1,8 +1,15 @@
 language: ruby
 rvm:
-  - 2.2.3
+- 2.2.3
 addons:
-  postgresql: "9.4"
+  postgresql: '9.4'
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: dgP+K3JrRtrvxAGS40LZj+401To/0bXtSsujhCQwO/JybGNCfvcz6mCEWTDf3mO0AgyIt2oL+rXkU47a7nDfltnealVlosA+fsBp3daKrL0/n7kW0EtfL37GbXH4fihsuWazVBA8cZt5wxIgyj4oHiFFgylY48JmFaZzcVltcBDElQOgF+HC7ofj9FrfK36PwbCFgo65DUKCVbTRan8ggi43B+9DX/Gwr6uxNRnY1bZMsOcVmb+va5Eqinb+L1NbqE/lvDqVZKNhF6WbHLhAwyZ5mrVfV0wIXlmtiWCsmOONpEnhOn6qq15AU7sGCaxuK++J1BlsTIRUttyCcGk1VezfX+dIr9DrGRP09BFAIsa/9F2FqX+QEw0wJkuE17SHVC1z/XyN18B9kHmYNfI55mkTtOBGhFT4qK5lPC5C/rsWLVEk0r2kC8f7k6n8IPie+wSiI64pUYqAtcIqgR+Pg7qTUJps43oQTiaFbNiOl+08gDpO0EDZW8AIRt7vMdFmQzK6S90FxFIqN4dzdP8RzWcokYzQWrRxR1h79lT9xEoKoPSCRRe5p//cJGvElFzusiQPJyyNgyLezGod84bw0qQcWKG2P5x18WY+sGBE/5+BF2p9k2d0rbSRw58bVB98fkBJ2A7ch5y5qAWrmjQtNiHXFCWH2rCPoyw9qsmW2KU=
+  app: stormy-sands-7008
+  on:
+    repo: aliaporci/the141club
