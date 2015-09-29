@@ -1,14 +1,16 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
-<%= simple_form_for @user do |form| %>
+<div class="col-sm-4 col-md-4 col-lg-4">
+  <%= simple_form_for @user do |form| %>
 
-  <%= form.input :handle %>
-  <%= form.input :first_name %>
-  <%= form.input :last_name %>
-  <%= form.input :email %>
-  <%= form.input :password %>
-  <%= form.input :password_confirmation, label: "Confirm password" %>
-  <%= form.submit "Join the Club" %>
+    <%= form.input :handle %>
+    <%= form.input :first_name %>
+    <%= form.input :last_name %>
+    <%= form.input :email %>
+    <%= form.input :password %>
+    <%= form.input :password_confirmation, label: "Confirm password" %>
+    <%= form.submit "Join the Club", class: "btn btn-primary" %>
 
-<% end %>
+  <% end %>
+</div>
