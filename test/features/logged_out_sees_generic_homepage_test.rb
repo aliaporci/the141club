@@ -5,7 +5,7 @@ class LoggedOutSeesGenericHomepageTest < Capybara::Rails::TestCase
     guy = User.create email: "guy@place.com", password: "12345678", handle: "DUDE", first_name: "Guy", last_name: "McGee"
 
     visit root_path
-    assert_content page, "Sign In"
+    assert_content page, "Join the Club"
     refute_content page, "Totes personalized"
 
   end
