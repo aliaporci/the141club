@@ -1,5 +1,4 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Sign In</h1>
 
 <div class="col-sm-4 col-md-4 col-lg-4">
   <%= form_tag do %>
@@ -18,5 +17,10 @@
     <%= submit_tag "Sign In", class: "btn btn-primary" %> or <%= link_to "Join the Club", sign_up_path %>
   </div>
 
+  <% end %>
+  <% if alert %>
+  <div class="alert alert-danger">
+    <%= alert %>
+  </div>
   <% end %>
 </div>
