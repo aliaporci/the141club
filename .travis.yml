@@ -13,3 +13,6 @@ deploy:
   app: stormy-sands-7008
   on:
     repo: aliaporci/the141club
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
